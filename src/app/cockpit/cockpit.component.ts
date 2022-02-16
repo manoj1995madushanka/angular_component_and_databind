@@ -25,6 +25,7 @@ export class CockpitComponent implements OnInit {
    * */
   onAddServer(serverNameInput: HTMLInputElement) {
 
+    // log local reference value
     console.log(serverNameInput);
     console.log(serverNameInput.value);
 
