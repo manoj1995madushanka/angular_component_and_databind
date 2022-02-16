@@ -4,7 +4,7 @@ import {
   Component,
   DoCheck,
   Input,
-  OnChanges,
+  OnChanges, OnDestroy,
   OnInit,
   SimpleChanges,
   ViewEncapsulation
@@ -19,7 +19,7 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class ServerElementComponent implements OnInit, OnChanges,
-  DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+  DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   // define element type
   // tslint:disable-next-line:no-input-rename
@@ -64,6 +64,10 @@ export class ServerElementComponent implements OnInit, OnChanges,
 
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked called');
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy called');
   }
 
 }
