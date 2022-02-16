@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -8,7 +8,7 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} f
   * that means those file css properties will apply to whole app that classes*/
   encapsulation: ViewEncapsulation.None
 })
-export class ServerElementComponent implements OnInit, OnChanges {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
 
   // define element type
   // tslint:disable-next-line:no-input-rename
@@ -27,6 +27,13 @@ export class ServerElementComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log('on init called');
+  }
+
+  /**
+   * trigger for any event of all components
+   * */
+  ngDoCheck(): void {
+    console.log('ngDoCheck called');
   }
 
 }
