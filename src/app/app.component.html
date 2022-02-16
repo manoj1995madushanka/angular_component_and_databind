@@ -10,6 +10,9 @@
       <!--for test noOnChanges lifecycle hook-->
       <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
 
+      <!--added for test ngOnDestroy functionality-->
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first element</button>
+
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"
