@@ -23,10 +23,14 @@ export class CockpitComponent implements OnInit {
   /**
    * trigger @Output event when user click button
    * */
-  onAddServer() {
+  onAddServer(serverNameInput) {
+
+    console.log(serverNameInput);
+    console.log(serverNameInput.value);
+
     this.serverCreated.emit(
       {
-        serverName: this.newServerName,
+        serverName: serverNameInput.value,
         serverContent: this.newServerContent
       }
     );
@@ -35,10 +39,10 @@ export class CockpitComponent implements OnInit {
   /**
    * trigger @Output event when user click button
    * */
-  onAddBlueprint() {
+  onAddBlueprint(serverNameInput) {
     this.blueprintCreated.emit(
       {
-        blueprintName: this.newServerName,
+        blueprintName: serverNameInput.value,
         blueprintContent: this.newServerContent
       }
     );
